@@ -50,3 +50,23 @@ mysql> describe Barn_Demographics;
 | in_barn     | tinyint(1)                    | YES  |     | NULL    |       |
 +-------------+-------------------------------+------+-----+---------+-------+
 7 rows in set (0.00 sec)
+
+
+mysql> create table Barn_Age_Update(
+    -> id INT,
+    -> demographics_id INT,
+    -> came_of_age DATETIME,
+    -> became_type ENUM ("chick", "hen", "rooster")
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> describe Barn_Age_Update;
++-----------------+-------------------------------+------+-----+---------+-------+
+| Field           | Type                          | Null | Key | Default | Extra |
++-----------------+-------------------------------+------+-----+---------+-------+
+| id              | int(11)                       | YES  |     | NULL    |       |
+| demographics_id | int(11)                       | YES  |     | NULL    |       |
+| came_of_age     | datetime                      | YES  |     | NULL    |       |
+| became_type     | enum('chick','hen','rooster') | YES  |     | NULL    |       |
++-----------------+-------------------------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
