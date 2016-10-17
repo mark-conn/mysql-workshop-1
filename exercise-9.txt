@@ -1,0 +1,52 @@
+mysql> create table Barn_Demographics(id INT, animal_name VARCHAR(50), animal_age VARCHAR(50), animal_type ENUM('chick', 'hen', 'rooster'), birthday DATETIME);
+Query OK, 0 rows affected (0.01 sec)
+
+
+mysql> describe Barn_Demographics;
++-------------+-------------------------------+------+-----+---------+-------+
+| Field       | Type                          | Null | Key | Default | Extra |
++-------------+-------------------------------+------+-----+---------+-------+
+| id          | int(11)                       | YES  |     | NULL    |       |
+| animal_name | varchar(50)                   | YES  |     | NULL    |       |
+| animal_age  | varchar(50)                   | YES  |     | NULL    |       |
+| animal_type | enum('chick','hen','rooster') | YES  |     | NULL    |       |
+| birthday    | datetime                      | YES  |     | NULL    |       |
++-------------+-------------------------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> alter table Barn_demographics ADD gender ENUM("M","F");
+ERROR 1146 (42S02): Table 'decodemtl_addressbook.Barn_demographics' doesn't exist
+mysql> alter table Barn_Demographics ADD gender ENUM("M", "F");
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> describe Barn_Demographics;
++-------------+-------------------------------+------+-----+---------+-------+
+| Field       | Type                          | Null | Key | Default | Extra |
++-------------+-------------------------------+------+-----+---------+-------+
+| id          | int(11)                       | YES  |     | NULL    |       |
+| animal_name | varchar(50)                   | YES  |     | NULL    |       |
+| animal_age  | varchar(50)                   | YES  |     | NULL    |       |
+| animal_type | enum('chick','hen','rooster') | YES  |     | NULL    |       |
+| birthday    | datetime                      | YES  |     | NULL    |       |
+| gender      | enum('M','F')                 | YES  |     | NULL    |       |
++-------------+-------------------------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> alter table Barn_Demographics ADD in_barn BOOLEAN;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> describe Barn_Demographics;
++-------------+-------------------------------+------+-----+---------+-------+
+| Field       | Type                          | Null | Key | Default | Extra |
++-------------+-------------------------------+------+-----+---------+-------+
+| id          | int(11)                       | YES  |     | NULL    |       |
+| animal_name | varchar(50)                   | YES  |     | NULL    |       |
+| animal_age  | varchar(50)                   | YES  |     | NULL    |       |
+| animal_type | enum('chick','hen','rooster') | YES  |     | NULL    |       |
+| birthday    | datetime                      | YES  |     | NULL    |       |
+| gender      | enum('M','F')                 | YES  |     | NULL    |       |
+| in_barn     | tinyint(1)                    | YES  |     | NULL    |       |
++-------------+-------------------------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
