@@ -1,0 +1,11 @@
+mysql> create table Account(id varchar(50));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create table AddressBook(id varchar(50));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create table Entry(id varchar(50));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create table Test(id varchar(50));
+Query OK, 0 rows affected (0.01 sec)
