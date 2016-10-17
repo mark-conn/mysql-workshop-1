@@ -1,0 +1,63 @@
+mysql> create table Floors(
+id INT, 
+level INT, 
+number_of_rooms VARCHAR(30)
+);
+Query OK, 0 rows affected (0.01 sec)
+
+
+mysql> create table Rooms(
+    -> id INT,
+    -> floor_id INT,
+    -> occupancy VARCHAR(15),
+    -> is_available TINYINT(1), 
+    -> #_of_windows VARCHAR(10),
+    -> has_Carpet TINYINT(1),
+    -> has_Kitchen TINYINT(1)
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+
+mysql> create table Booking_Entry(
+    -> id INT,
+    -> room_id INT,
+    -> booking_start_date DATETIME,
+    -> booking_end_date DATETIME
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+
+
+mysql> describe Floors;
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| id              | int(11)     | YES  |     | NULL    |       |
+| level           | int(11)     | YES  |     | NULL    |       |
+| number_of_rooms | varchar(30) | YES  |     | NULL    |       |
++-----------------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> describe Rooms;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| id           | int(11)     | YES  |     | NULL    |       |
+| floor_id     | int(11)     | YES  |     | NULL    |       |
+| occupancy    | varchar(15) | YES  |     | NULL    |       |
+| is_available | tinyint(1)  | YES  |     | NULL    |       |
+| has_Carpet   | tinyint(1)  | YES  |     | NULL    |       |
+| has_Kitchen  | tinyint(1)  | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+
+mysql> describe Booking_Entry;
++--------------------+----------+------+-----+---------+-------+
+| Field              | Type     | Null | Key | Default | Extra |
++--------------------+----------+------+-----+---------+-------+
+| id                 | int(11)  | YES  |     | NULL    |       |
+| room_id            | int(11)  | YES  |     | NULL    |       |
+| booking_start_date | datetime | YES  |     | NULL    |       |
+| booking_end_date   | datetime | YES  |     | NULL    |       |
++--------------------+----------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
