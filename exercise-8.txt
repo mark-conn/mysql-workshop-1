@@ -1,0 +1,22 @@
+mysql> drop table Account;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create table Account(id INT, email VARCHAR(255),password VARCHAR(40), created_on DATETIME, modified_on DATETIME);
+Query OK, 0 rows affected (0.02 sec)
+
+
+
+mysql> drop table AddressBook;
+Query OK, 0 rows affected (0.01 sec)
+
+
+mysql> create table AddressBook(id INT, account_id INT, name VARCHAR(255), created_on DATETIME, modified_on DATETIME);
+Query OK, 0 rows affected (0.01 sec)
+
+
+
+mysql> drop table Entry;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> create table Entry(id INT, address_book_id INT, first_name VARCHAR(255), last_name VARCHAR(255), birthday DATETIME, type ENUM('home', 'work', 'other'), subtype ENUM('phone', 'address', 'email'), content_line_one VARCHAR(255), content_line_two VARCHAR(255), content_line_three VARCHAR(255), content_line_four VARCHAR(255), content_line_five VARCHAR(255));
+Query OK, 0 rows affected (0.02 sec)
